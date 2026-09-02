@@ -4,7 +4,9 @@ __pycache__/
 build/
 dist/
 wheels/
+mlruns/python src/train.py
 *.egg-info
+mlflow.db
 
 # Virtual environments
 .venv
