@@ -8,7 +8,7 @@ on:
 
 jobs:
   run-tests:
-    name:  Run Pytest with UV
+    name: 🧪 Run Pytest with UV
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +31,7 @@ jobs:
         run: uv run pytest
 
   build-docker:
-    name:  Test Docker Multi-Stage Build
+    name: 🐳 Test Docker Multi-Stage Build
     needs: run-tests
     runs-on: ubuntu-latest
 
