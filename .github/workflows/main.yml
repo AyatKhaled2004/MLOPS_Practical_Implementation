@@ -1,14 +1,14 @@
-name: CI/CD Pipeline
+﻿name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   run-tests:
-    name: 🧪 Run Pytest with UV
+    name: Run Pytest with UV
     runs-on: ubuntu-latest
 
     steps:
@@ -22,10 +22,10 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install 3.11
+        run: uv python install 3.14
 
       - name: Pin Python version
-        run: uv python pin 3.11
+        run: uv python pin 3.14
 
       - name: Install Dependencies
         run: uv sync --frozen
