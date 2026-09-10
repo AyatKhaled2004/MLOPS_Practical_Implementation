@@ -1,4 +1,4 @@
 [core]
-    remote = local_remote
-['remote "local_remote"']
-    url = D:\dvc_remote_storage
+    remote = storage
+['remote "storage"']
+    url = https://dagshub.com/ayatkhaled32721/MLOPS_Practical_Implementation.dvc
