@@ -2,6 +2,9 @@ import streamlit as st
 import requests
 import json
 from src.config import COLUMNS_PATH
+import os
+
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/predict")
 
 st.set_page_config(page_title="Real Estate Predictor", page_icon="🏠", layout="centered")
 
@@ -36,7 +39,7 @@ if submit_button:
     }
     
     try:
-        response = requests.post("http://127.0.0.1:8000/predict", json=payload)
+        response = requests.post(API_URL, json=payload)
         
         if response.status_code == 200:
             result = response.json()
