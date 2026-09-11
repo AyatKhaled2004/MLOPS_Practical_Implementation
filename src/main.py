@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException
-from src.schemas import PricePredictionRequest, PricePredictionResponse
-from src.predict import model_service, predict_price
+from fastapi import FastAPI
+from src.routes import router
+from src.predict import model_service
 from src.logger import logger
 
 
@@ -21,23 +21,4 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-
-@app.get("/")
-def read_root():
-    return {"status": "ok", "message": "Bangalore Real Estate API is running"}
-
-
-@app.post("/predict", response_model=PricePredictionResponse)
-def predict(request: PricePredictionRequest):
-    try:
-        price = predict_price(
-            location=request.location,
-            sqft=request.sqft,
-            bath=request.bath,
-            bhk=request.bhk
-        )
-        return PricePredictionResponse(predicted_price=price)
-
-    except Exception as e:
-        logger.error("prediction_failed", error=str(e))
-        raise HTTPException(status_code=500, detail="Internal server prediction error")
+app.include_router(router)
