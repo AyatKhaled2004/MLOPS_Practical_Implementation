@@ -1,7 +1,7 @@
 # ==========================================
 # STAGE 1: Builder Stage
 # ==========================================
-FROM python:3.11-slim AS builder
+FROM python:3.12-slim AS builder
 
 WORKDIR /app
 
@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir uv && \
 # ==========================================
 # STAGE 2: Final Stage
 # ==========================================
-FROM python:3.11-slim AS runner
+FROM python:3.12-slim AS runner
 
 WORKDIR /app
 

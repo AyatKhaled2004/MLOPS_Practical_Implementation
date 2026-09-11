@@ -22,10 +22,10 @@ jobs:
           enable-cache: true
 
       - name: Set up Python
-        run: uv python install 3.11
+        run: uv python install 3.12
 
       - name: Pin Python version
-        run: uv python pin 3.11
+        run: uv python pin 3.12
 
       - name: Install Dependencies
         run: uv sync --frozen

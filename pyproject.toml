@@ -6,9 +6,11 @@ readme = "README.md"
 authors = [
     { name = "AyatKhaled2004", email = "ayatkhaled32721@gmail.com" }
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.141.1",
+    "httpx>=0.28.0",
+    "joblib>=1.4.0",
     "mlflow>=3.15.2",
     "numpy>=2.5.2",
     "pydantic>=2.13.4",
@@ -26,14 +28,8 @@ mini-project-session-one = "mini_project_session_one:main"
 [build-system]
 requires = ["uv_build>=0.12.6,<0.13.0"]
 build-backend = "uv_build"
+
 [tool.pytest.ini_options]
 pythonpath = [
   "."
-]
-dependencies = [
-    "fastapi>=0.141.1",
-    "httpx>=0.28.0",
-    "joblib>=1.4.0",
-    "mlflow>=3.15.2",
-    
 ]
